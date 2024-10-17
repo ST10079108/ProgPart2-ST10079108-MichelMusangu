@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    #AP-Claims, #Lecturer-Claims, #Lecturer-Add {
+        display:none;
+    }
+    
+</style>
+<div class="text-center">
+    <a asp-controller="Claims" asp-action="Add">Lecturer</a>
+    <a asp-controller="Claims" asp-action="List">Programme Coordinator/ Academic Manager</a>
+</div>

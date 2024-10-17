@@ -1,0 +1,49 @@
+﻿<style>
+    #Lecturer-Add {
+        display: none;
+    }
+</style>
+@{
+    ViewData["Title"] = "Pending Claims";
+}
+@model List<ClaimsPortal.Models.Entities.Claim>
+
+<h1>Pending Claims</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Claim ID</th>
+            <th>Lecturer Name</th>
+            <th>Description</th>
+            <th>Hours Worked</th>
+            <th>Rate</th>
+            <th>Total</th>
+            <th>Claim Status</th>
+            <th>   </th>
+            <th>   </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model){
+            <tr>
+                @if (claim.Status == "Pending"){
+                <td>@claim.Id</td>
+                <td>@claim.Name</td>
+                <td>@claim.Description</td>
+                <td>@claim.HoursWorked</td>
+                <td>@claim.Rate</td>
+                <td>@claim.Total</td>
+                <td>@claim.Status</td>
+                <td>
+                    <a asp-controller="Claims" asp-action="Approve" asp-route-id="@claim.Id" class="btn btn-primary">Approve</a>
+                </td>
+                    <td>
+                        <a asp-controller="Claims" asp-action="Reject" asp-route-id="@claim.Id" class="btn btn-primary">Reject</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Claims Status";
+}
+@model List<ClaimsPortal.Models.Entities.Claim>
+
+<h1>Claims Status</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Claim ID</th>
+            <th>Lecturer Name</th>
+            <th>Description</th>
+            <th>Hours Worked</th>
+            <th>Rate</th>
+            <th>Total</th>
+            <th>Claim Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.Id</td>
+                <td>@claim.Name</td>
+                <td>@claim.Description</td>
+                <td>@claim.HoursWorked</td>
+                <td>@claim.Rate</td>
+                <td>@claim.Total</td>
+                <td>@claim.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

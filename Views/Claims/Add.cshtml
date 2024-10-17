@@ -1,0 +1,59 @@
+﻿<style>
+    #AP-Claims {
+        display: none;
+    }
+</style>
+@{
+    ViewData["Title"] = "Submit Claim";
+}
+@model ClaimsPortal.Models.AddClaimModel
+
+<h1>Submit Claim</h1>
+<form method="post">
+
+
+<div class="mt-3" style="display:none">
+    <label class="form-label" >Id</label>
+    <input class="form-control" type="number" asp-for="Id"/>
+</div>
+
+<div class="mt-3">
+    <label class ="form-label">Name</label>
+    <input class="form-control" type="text" asp-for="Name" />
+</div>
+
+<div class="mt-3">
+    <label class="form-label">Description</label>
+    <input class="form-control" type="text" asp-for="Description" />
+</div>
+
+<div class="mt-3">
+    <label class="form-label">Hours Worked</label>
+    <input class="form-control" type="number" name="Hours" asp-for="Hours" />
+</div>
+
+<div class="mt-3">
+    <label class="form-label">Rate</label>
+    <input class="form-control" type="number" name="Rate" asp-for="Rate" />
+</div>
+
+<div class="mt-3">
+    <label class="form-label">Total</label>
+    <input class="form-control" id="Total" type="number" value="" asp-for="Total"/>
+    <button type="button" onclick="calculateTotal()">Calculate</button>
+</div>
+
+    <div class="mt-3" style="display:none">
+        <label class="form-label">Status</label>
+        <input class="form-control" type="text" value="Pending" asp-for="Status" readonly/>
+    </div>
+
+    <div class="mt-3">
+    <input type="file" id="myFile" name="filename">
+    </div>
+
+<div class="mt-3">
+    <button class="btn btn-primary" type="submit">Submit</button>
+</div>
+
+</form>
