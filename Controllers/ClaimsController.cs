@@ -40,7 +40,8 @@ namespace ClaimsPortal.Controllers
 
 
 
-            return View();
+            //return View();
+            return RedirectToAction("ListClaims");
         }
 
         
