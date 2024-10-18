@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClaimsPortal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241016103601_Third Migration")]
-    partial class ThirdMigration
+    [Migration("20241018102506_Migration 1")]
+    partial class Migration1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
