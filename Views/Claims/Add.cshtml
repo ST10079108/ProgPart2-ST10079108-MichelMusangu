@@ -17,7 +17,7 @@
             you have entered both hours worked and rate, and clicked the calculate total button</p>
     </div>
 
-    <form method="post" class="claim-form">
+    <form method="post" class="claim-form" id="ClaimForm">
         <div class="form-section hidden">
             <label for="Id">Id</label>
             <input type="number" id="Id" asp-for="Id" />
@@ -59,6 +59,7 @@
         <div class="form-section">
 
             <input type="file" id="myFile" name="filename">
+            <div id="fileError" style="display:none; color:red;"> Maximum allowed size is 2 MB.</div>
         </div>
 
         <div class="form-section">

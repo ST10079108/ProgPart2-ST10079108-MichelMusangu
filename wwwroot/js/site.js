@@ -11,3 +11,19 @@ function calculateTotal() {
 
     document.getElementById('Total').value = total;
 }
+
+var uploadField = document.getElementById("myFile");
+var isFileValid = true;
+
+uploadField.onchange = function () {
+    if (this.files[0].size > 2097152) {  
+        alert("Maximum allowed size is 2 MB.");
+        this.value = "";  
+        document.getElementById('fileError').style.display = 'block';
+        isFileValid = false;  
+    } else {
+        document.getElementById('fileError').style.display = 'none';
+        isFileValid = true;  
+    }
+};
+
